@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCFDFE;
+  color: #1D2346;
+}
+
+.wrapper {
+  max-width: 450px;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.game-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: .25em 0;
+}
+
+.game-description {
+  font-weight: 400;
+  margin-bottom: 2em;
+}
+
+.start-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1em 3em;
+  border: none;
+  background-color: #91D7F5;
+  color: #FCFDFE;
+  border-radius: 10px;
+}
