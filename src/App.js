@@ -5,9 +5,13 @@ import Quiz from './components/Quiz';
 export default function App() {
   const [gameOn, setGameOn] = useState(false);
 
+  function startClick() {
+    setGameOn(true);
+  }
+
   return (
     <>
-      { gameOn ? <Quiz /> : <Start /> }
+      { gameOn ? <Quiz /> : <Start startClick={startClick} /> }
     </>
   )
 }
