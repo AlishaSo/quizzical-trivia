@@ -21,13 +21,13 @@ export default function App() {
     }
   }, [gameOn]);
 
-  function startClick() {
+  function toggleGame() {
     setGameOn(true);
   }
 
   return (
     <>
-      { gameOn ? <Quiz /> : <Start startClick={startClick} /> }
+      { gameOn ? <Quiz /> : <Start toggleGame={toggleGame} /> }
     </>
   )
 }
