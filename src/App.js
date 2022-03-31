@@ -4,6 +4,7 @@ import Quiz from './components/Quiz';
 
 export default function App() {
   const [gameOn, setGameOn] = useState(false);
+  let apiData;
 
   useEffect(() => {
     try {
@@ -14,6 +15,7 @@ export default function App() {
             throw new Error('Could not retrieve any questions at this time');
           } else {
             console.log(data.results);
+            apiData = data.results;
           }
         });
     } catch(error) {
@@ -27,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      { gameOn ? <Quiz /> : <Start toggleGame={toggleGame} /> }
+      { gameOn ? <Quiz apiData={apiData} /> : <Start toggleGame={toggleGame} /> }
     </>
   )
 }
