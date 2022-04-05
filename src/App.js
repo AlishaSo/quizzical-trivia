@@ -9,7 +9,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=medium')
+      fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple')
         .then(response => response.json())
         .then(data => {
           if(data.response_code !== 0) {
