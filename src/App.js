@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <>
-      { gameOn ? <Quiz /> : <Start toggleGame={toggleGame} /> }
+      { gameOn ? <Quiz trivia={triviaData} /> : <Start toggleGame={toggleGame} /> }
     </>
   )
 }
