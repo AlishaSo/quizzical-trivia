@@ -3,9 +3,9 @@ import React from 'react';
 export default function Questions(props) {
   let allAnswers = props.allAnswers;
   allAnswers = allAnswers.sort(() => Math.random() - 0.5);
-  const answerOptions = allAnswers.map(answer => {
+  const answerOptions = allAnswers.map((answer, index) => {
     const correctAnswerClass = answer === props.correctAnswer ? ' correct-answer' : '';
-    return <button className={`option-btn${correctAnswerClass}`}>{answer}</button>
+    return <button key={index} className={`option-btn${correctAnswerClass}`}>{answer}</button>
   })
 
   return (
