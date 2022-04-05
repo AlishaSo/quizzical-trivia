@@ -7,12 +7,12 @@ export default function Questions(props) {
     const correctAnswerClass = answer === props.correctAnswer ? ' correct-answer' : '';
     return <button key={index} className={`option-btn${correctAnswerClass}`}>{answer}</button>
   })
+  console.log(props.correctAnswer)
 
   return (
     <div className='quest-el-div'>
       <h2>{props.question}</h2>
       <div className='answers-container'>{answerOptions}</div>
-      <h3>{props.correctAnswer}</h3>
     </div>
   )
 }
