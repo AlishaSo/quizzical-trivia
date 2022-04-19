@@ -60,3 +60,34 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.quest-el-div {
+  border-bottom: 1px solid #DBDEF0;
+  max-width: 800px;
+  padding: 1.5em 0;
+}
+
+.question {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.answers-container {
+  max-width: 600px;
+  padding-top: .8em;
+  display: flex;
+  gap: 1.5em;
+}
+
+.option-btn {
+  background-color: #FCFDFE;
+  border: 1px solid #79D3FF;
+  border-radius: 10px;
+  padding: .2em .6em;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
