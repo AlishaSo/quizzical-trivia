@@ -75,7 +75,6 @@ body {
 }
 
 .answers-container {
-  max-width: 600px;
   padding-top: .8em;
   display: flex;
   gap: 1.5em;
@@ -85,7 +84,7 @@ body {
   background-color: #FCFDFE;
   border: 1px solid #79D3FF;
   border-radius: 10px;
-  padding: .2em .6em;
+  padding: .3em .8em;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 500;
