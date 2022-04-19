@@ -11,7 +11,7 @@ export default function Questions(props) {
 
   return (
     <div className='quest-el-div'>
-      <h2>{props.question}</h2>
+      <h2 className='question'>{props.question}</h2>
       <div className='answers-container'>{answerOptions}</div>
     </div>
   )
