@@ -16,6 +16,9 @@ body {
   background-color: #FCFDFE;
   color: #1D2346;
   position: relative;
+  background-image: url('./images/blob_7.svg'), url('./images/blob_6.svg');
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
 }
 
 .wrapper {
@@ -44,21 +47,24 @@ body {
   margin: .25em 0;
 }
 
+.btn {
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .game-description {
   font-weight: 400;
   margin-bottom: 2em;
 }
 
 .start-btn {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
   padding: 1em 3em;
   border: none;
   background-color: #91D7F5;
   color: #FCFDFE;
-  border-radius: 10px;
-  cursor: pointer;
 }
 
 .quest-el-div {
@@ -83,14 +89,18 @@ body {
 .option-btn {
   background-color: #FCFDFE;
   border: 1px solid #79D3FF;
-  border-radius: 10px;
   padding: .3em .8em;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 .clicked {
   background-color: #79D3FF;
+}
+
+.check-answers-btn {
+  border: 0;
+  background-color: #79D3FF;
+  color: #fff;
+  padding: .8em 1.2em;
+  display: block;
+  margin: 2em auto;
 }
