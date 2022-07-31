@@ -29,8 +29,9 @@ export default function Quiz() {
   )
   
   return (
-    <>
+    <div className='quiz-container'>
       {questionElements}
-    </>
+      <button className='btn check-answers-btn'>Check answers</button>
+    </div>
   )
 }
