@@ -14,7 +14,7 @@ export default function Questions(props) {
     return <button 
       key = {nan} 
       id = {nan} 
-      className = {`option-btn${correctAnswerClass}`} 
+      className = {`option-btn${correctAnswerClass} btn`} 
       onClick = {clickedState}>{answer}
     </button>
   })
