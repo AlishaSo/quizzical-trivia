@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { decode } from 'html-entities';
 
 export default function Questions(props) {
 
@@ -11,17 +12,20 @@ export default function Questions(props) {
   let answerOptions = allAnswers.map(answer => {
     const correctAnswerClass = answer === props.correctAnswer ? ' correct-answer' : '';
     const nan = nanoid();
-    return <button 
-      key = {nan} 
-      id = {nan} 
-      className = {`option-btn${correctAnswerClass} btn`} 
-      onClick = {clickedState}>{answer}
-    </button>
+    return (
+      <button 
+        key = {nan} 
+        id = {nan} 
+        className = {`option-btn${correctAnswerClass} btn`} 
+        onClick = {clickedState}
+      >
+        {decode(answer)}
+      </button>)
   })
 
   return (
     <div className='quest-el-div'>
-      <h2 className='question'>{props.question}</h2>
+      <h2 className='question'>{decode(props.question)}</h2>
       <div className='answers-container'>{answerOptions}</div>
     </div>
   )
