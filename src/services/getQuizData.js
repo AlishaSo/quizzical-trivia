@@ -1,4 +1,4 @@
-export default async function getQuizData() {
+async function fetchQuizData() {
   try {
      const response = await fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple')
       const data = await response.json();
@@ -14,3 +14,21 @@ export default async function getQuizData() {
     window.alert(error);
   }
 }
+
+function turnDataIntoObjs(apiData) {
+  const triviaObjs = apiData.map(item => ({
+    question: item.question,
+    answers: item.incorrect_answers.concat(item.correct_answer),
+    rightAnswer: item.correct_answer
+  }));
+
+  return triviaObjs;
+}
+
+async function getData() {
+  let apiData = await fetchQuizData();
+  let quizData = turnDataIntoObjs(apiData);
+  return quizData;
+}
+
+export default getData;
