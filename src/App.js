@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Start from './components/Start';
-import Quiz from './components/Quiz';
+import { useState } from "react";
+import Start from "./components/Start";
+import Quiz from "./components/Quiz";
 
 export default function App() {
   const [gameOn, setGameOn] = useState(false);
@@ -10,8 +10,12 @@ export default function App() {
   }
 
   return (
-    <div className='App'>
-      { gameOn ? <Quiz /> : <Start toggleGame={toggleGame} /> }
+    <div className="App">
+      {gameOn ? (
+        <Quiz toggleGame={toggleGame} />
+      ) : (
+        <Start toggleGame={toggleGame} />
+      )}
     </div>
-  )
+  );
 }
