@@ -1,32 +1,41 @@
-import { nanoid } from 'nanoid';
-import { decode } from 'html-entities';
+import { nanoid } from "nanoid";
+import { decode } from "html-entities";
 
 export default function Questions(props) {
+  let { allAnswers } = props;
 
-  function clickedState(e) {
-    e.currentTarget.classList.toggle('clicked');
+  function clickedState(parentId, e) {
+    const container = document.querySelector(`#${parentId} > .answers-container`);
+    for(const option of container.children) {
+      if(option.classList.contains('checked'))
+        option.classList.remove('checked');
+    }
+    e.currentTarget.classList.toggle("checked");
   }
 
-  let { allAnswers } = props;
-  allAnswers = allAnswers.sort(() => Math.random() - 0.5);  //make them be "random"
+  allAnswers = allAnswers.sort(() => Math.random() - 0.5); //make them be 'random'
   let answerOptions = allAnswers.map(answer => {
-    const correctAnswerClass = answer === props.correctAnswer ? ' correct-answer' : '';
+    const correctAnswerClass =
+      answer === props.correctAnswer ? " correct-answer" : "";
     const nan = nanoid();
     return (
-      <button 
-        key = {nan} 
-        id = {nan} 
-        className = {`option-btn${correctAnswerClass} btn`} 
-        onClick = {clickedState}
+      <button
+        key={nan}
+        id={nan}
+        name={decode(answer)}
+        className={`option-btn${correctAnswerClass} btn`}
+        onClick={e => clickedState(props.id, e)}
       >
-        {decode(answer)}
-      </button>)
-  })
+        {decode(answer)}{" "}
+        {/* will convert html entities to its corresponding special character */}
+      </button>
+    );
+  });
 
   return (
-    <div className='quest-el-div'>
-      <h2 className='question'>{decode(props.question)}</h2>
-      <div className='answers-container'>{answerOptions}</div>
+    <div className="quest-el-div" id={props.id}>
+      <h2 className="question">{decode(props.question)}</h2>
+      <div className="answers-container">{answerOptions}</div>
     </div>
-  )
+  );
 }
