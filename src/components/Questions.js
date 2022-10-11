@@ -13,8 +13,13 @@ export default function Questions(props) {
     e.currentTarget.classList.toggle("checked");
   }
 
+  const chooseAnswer = (e, questionIndex) => {
+    clickedState(props.id, e);
+    props.handleClick(questionIndex, e.target.name);
+  }
+
   allAnswers = allAnswers.sort(() => Math.random() - 0.5); //make them be 'random'
-  let answerOptions = allAnswers.map(answer => {
+  let answerOptions = allAnswers.map((answer, index) => {
     const correctAnswerClass =
       answer === props.correctAnswer ? " correct-answer" : "";
     const nan = nanoid();
@@ -24,9 +29,9 @@ export default function Questions(props) {
         id={nan}
         name={decode(answer)}
         className={`option-btn${correctAnswerClass} btn`}
-        onClick={e => clickedState(props.id, e)}
+        onClick={e => chooseAnswer(e, index)}
       >
-        {decode(answer)}{" "}
+        {decode(answer)}
         {/* will convert html entities to its corresponding special character */}
       </button>
     );
